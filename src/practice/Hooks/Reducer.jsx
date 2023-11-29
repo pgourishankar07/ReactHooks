@@ -4,9 +4,9 @@ function reducer(state, action) {
   //takes currentState and dispatch function with parameters
   console.log("The count is : ", state.count, " ", state.name);
   switch (action.type) {
-    case "inc":
+    case "INC":
       return { count: state.count + 1, name: action.payload };
-    case "dec":
+    case "DEC":
       return { count: state.count - 1, name: action.payload };
     default:
       return state;
@@ -20,10 +20,10 @@ const Reducer = () => {
   return (
     <>
       <div>Count : {state.count}</div>
-      <button onClick={() => dispatch({ type: "inc", payload: "Bunty" })}>
+      <button onClick={() => dispatch({ type: "INC", payload: "Bunty" })}>
         +
       </button>
-      <button onClick={() => dispatch({ type: "dec", payload: "Gouri" })}>
+      <button onClick={() => dispatch({ type: "DEC", payload: "Gouri" })}>
         -
       </button>
       {state.name}
