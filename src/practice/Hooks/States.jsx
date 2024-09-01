@@ -18,3 +18,13 @@ const States = () => {
 };
 
 export default States;
+
+/*
+useState is a React hook that allows you to add state to your functional components. It returns an array containing the current state and a function to update it.
+
+
+steps :
+State Update: When the setState function (e.g., setCount) is called to update the state, React schedules a re-render of the component.
+Re-render: During this re-render, React re-evaluates the component function, creating a new virtual DOM tree based on the updated state.
+
+*/

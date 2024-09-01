@@ -10,12 +10,12 @@ const Ref = () => {
 
     console.log("useState : ", count);
     console.log("useRef   : ", countRef.current);
+    // after executing all the codes in the function then re renders (async manner)
   }
 
   return (
     <>
-      {/* Count : {count} */}
-      Count : {countRef.current}
+      Count : {countRef.current} {/* // for displaying in the web page */}
       <button onClick={handleClick}>+</button>
     </>
   );

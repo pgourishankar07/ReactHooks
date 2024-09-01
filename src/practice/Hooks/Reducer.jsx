@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 
 function reducer(state, action) {
+  // state -- { count: 0, name: "Babloo" } and action -- { type: "INC", payload: "Bunty" }
   //takes currentState and dispatch function with parameters
   console.log("The count is : ", state.count, " ", state.name);
   switch (action.type) {
@@ -15,7 +16,7 @@ function reducer(state, action) {
 
 const Reducer = () => {
   const [state, dispatch] = useReducer(reducer, { count: 0, name: "Babloo" });
-  //(mainReducerFunction,initial state) state --- is the object of values and dispatch --- is the function which calls the mainReducer function it can also take object values as parameters eg:type
+  //(mainReducerFunction,initial state) state --- { count: 0, name: "Babloo" } is the object of values and dispatch --- reducer is the function which calls the mainReducer function it can also take object values as parameters eg:type
 
   return (
     <>
