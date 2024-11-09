@@ -1,29 +1,26 @@
 import React, { useState, useCallback } from "react";
 
-const ChildComponent = React.memo(({ onClick }) => {
+const ChildComponent = React.memo(({ handleClickProp }) => {
   console.log("ChildComponent rendered");
-  return <button onClick={onClick}>Click me</button>;
+  return <button onClick={handleClickProp}>Click me</button>;
 });
 
 const Callbacks = () => {
   const [count, setCount] = useState(0);
 
   // Without useCallback - a new function is created on every render
-  //   const handleClick = () => {
-  //     console.log("Button clicked");
-  //     setCount(count + 1);
-  //   };
-
-  // With useCallback - the function is memoized and only recreated when dependencies change
-  const handleClick = useCallback(() => {
+  const handleClickF = () => {
     console.log("Button clicked");
     setCount(count + 1);
-  }, [count]);
+  };
+
+  // With useCallback - the function is memoized and only recreated when dependencies change
+  const handleClick = useCallback(handleClickF, [count]);
 
   return (
     <div>
       <p>Count: {count}</p>
-      <ChildComponent onClick={handleClick} />
+      <ChildComponent handleClickProp={handleClick} />
     </div>
   );
 };

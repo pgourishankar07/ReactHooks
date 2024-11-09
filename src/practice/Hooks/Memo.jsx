@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 
 function ComplexCompute(num) {
   console.log("Calling Slow Function"); //While changing numbers u will notice lag in rendering the webpage
-  for (let i = 0; i <= 100000000; i++) {}
+  for (let i = 0; i <= 1000000000; i++) {}
   return num * 2;
 }
 
@@ -15,7 +15,7 @@ const Memo = () => {
     color: dark ? "white" : "black",
   };
 
-  //   const computedNum = ComplexCompute(num);
+  // const computedNum = ComplexCompute(num);
   const computedNum = useMemo(() => ComplexCompute(num), [num]);
 
   return (

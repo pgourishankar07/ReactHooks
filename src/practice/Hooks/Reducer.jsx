@@ -1,20 +1,19 @@
 import React, { useReducer } from "react";
 
-function reducer(state, action) {
-  // state -- { count: 0, name: "Babloo" } and action -- { type: "INC", payload: "Bunty" }
-  //takes currentState and dispatch function with parameters
-  console.log("The count is : ", state.count, " ", state.name);
-  switch (action.type) {
-    case "INC":
-      return { count: state.count + 1, name: action.payload };
-    case "DEC":
-      return { count: state.count - 1, name: action.payload };
-    default:
-      return state;
-  }
-}
-
 const Reducer = () => {
+  function reducer(state, action) {
+    // state -- { count: 0, name: "Babloo" } and action -- { type: "INC", payload: "Bunty" }
+    //takes currentState and dispatch function with parameters
+    console.log("The count is : ", state.count, " ", state.name);
+    switch (action.type) {
+      case "INC":
+        return { count: state.count + 1, name: action.payload };
+      case "DEC":
+        return { count: state.count - 1, name: action.payload };
+      default:
+        return state;
+    }
+  }
   const [state, dispatch] = useReducer(reducer, { count: 0, name: "Babloo" });
   //(mainReducerFunction,initial state) state --- { count: 0, name: "Babloo" } is the object of values and dispatch --- reducer is the function which calls the mainReducer function it can also take object values as parameters eg:type
 
@@ -39,6 +38,8 @@ useReducer is very similar to useState
 it follows redux pattern of doing things
 it takes in more arguements / properties than useState as an object
 and its not used for small usecase like counter
+used to manage complex state logic
+Centralized State Updates with Actions
 
 -REDUX a complex state management tool 
 -REDUCERS manages the state and return the updated state

@@ -28,6 +28,7 @@ export default Ref;
 - they can be assigned using the useRef hook, which returns a mutable reference object where .current property is initialized with passed argument (initial value).
 - they allow us to perform tasks that can’t be achieved through props and state.
 - we use the `useRef` hook in functional components to create a reference object, which is mutable and persists across renders.
+-persist values across renders without causing a re-render when the value changes
 
 it is less simialr to useState but the difference is it doesn't re-render the component(not used for rendering usecases)
 and the ref values are not used inside the return part of the component 
